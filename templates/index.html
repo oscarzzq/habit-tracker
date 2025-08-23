@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table tablestriped">
+        <thead>
+            <tr>
+                <th class="text-start">Habit</th>
+                <th class="text-start">Start time</th>
+                <th class="text-start">Succeeded</th>
+                <th class="text-start">Failed</th>
+                <th class="text-start">Skipped</th>
+                <th class="text-center">Log</th>
+                <th class="text-center">Archive/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for habit in habits %}
+                {% if habit.color == 'white' %}
+                    <tr>
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-secondary" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-secondary" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'black' %}
+                    <tr class="table-dark">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-dark" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-dark" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'blue' %}
+                    <tr class="table-primary">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-primary" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-primary" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'lblue' %}
+                    <tr class="table-info">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-info" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-info" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'orange' %}
+                    <tr class="table-warning">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-warning" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-warning" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'red' %}
+                    <tr class="table-danger">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-danger" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-danger" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'green' %}
+                    <tr class="table-success">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-success" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-success" href="/archive" role="button">Archive/Delete</a></td>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'gray' %}
+                    <tr class="table-secondary">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        <td><a class="btn btn-outline-secondary" href="/log" role="button">Log</a></td>
+                        <td><a class="btn btn-outline-secondary" href="/archive" role="button">Archive/Delete</a></td>
+                        </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

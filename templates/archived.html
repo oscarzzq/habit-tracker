@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Archived
+{% endblock %}
+
+{% block main %}
+    <table class="table tablestriped">
+        <thead>
+            <tr>
+                <th class="text-start">Habit</th>
+                <th class="text-start">Start time</th>
+                <th class="text-start">Succeeded</th>
+                <th class="text-start">Failed</th>
+                <th class="text-start">Skipped</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for habit in habits %}
+                {% if habit.color == 'white' %}
+                    <tr>
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'black' %}
+                    <tr class="table-dark">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'blue' %}
+                    <tr class="table-primary">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'lblue' %}
+                    <tr class="table-info">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'orange' %}
+                    <tr class="table-warning">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'red' %}
+                    <tr class="table-danger">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'green' %}
+                    <tr class="table-success">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                    </tr>
+                {% endif %}
+                {% if habit.color == 'gray' %}
+                    <tr class="table-secondary">
+                        <td class="text-start">{{ habit.habit }}</th>
+                        <td class="text-start">{{ habit.stime }}</th>
+                        <td class="text-start">{{ habit.times }}</th>
+                        <td class="text-start">{{ habit.fails }}</th>
+                        <td class="text-start">{{ habit.skips }}</th>
+                        </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

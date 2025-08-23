@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log
+{% endblock %}
+
+{% block main %}
+    <form action="/log" method="post">
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="habit">
+                <option disabled selected>Select Habit</option>
+                {% for habit in habits %}
+                    <option value={{ habit.habit }}>{{ habit.habit }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="action">
+                <option disabled selected>Select Log Type</option>
+                <option value=succeed>Succeed</option>
+                <option value=fail>Fail</option>
+                <option value=skip>Skip</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="times" placeholder="How many times" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Log</button>
+    </form>
+{% endblock %}

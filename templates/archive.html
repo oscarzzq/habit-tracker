@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Archive/Delete
+{% endblock %}
+
+{% block main %}
+    <form action="/archive" method="post">
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="habit">
+                <option disabled selected>Select Habit</option>
+                {% for habit in habits %}
+                    <option value={{ habit.habit }}>{{ habit.habit }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" name="mode">
+                <option disabled selected>Select Action</option>
+                <option value=archive>Archive</option>
+                <option value=delete>Delete</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Continue</button>
+    </form>
+{% endblock %}
