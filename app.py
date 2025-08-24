@@ -21,7 +21,29 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///habits.db")
+# Create tables if they don't exist
+db.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        username TEXT NOT NULL,
+        hash TEXT NOT NULL
+    )
+""")
 
+db.execute("""
+    CREATE TABLE IF NOT EXISTS habit (
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        user_id INTEGER NOT NULL,
+        habit TEXT NOT NULL,
+        times INTEGER,
+        fails INTEGER,
+        skips INTEGER,
+        type TEXT,
+        color TEXT,
+        stime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY(user_id) REFERENCES users(id)
+    )
+""")
 
 @app.route("/")
 @login_required
