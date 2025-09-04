@@ -1,7 +1,7 @@
 # Flask Habit Tracker
 A full-stack web application built with Python and Flask that allows users to create, track, and manage their personal habits. This project was developed as a final project for Harvard's CS50 course.
 
-**Live Demo**: https://habit-tracker-oscar.onrender.com/
+**Live Demo**: https://habit-tracker-j0es.onrender.com/
 
 **Video Walkthrough**: https://youtu.be/o_7K_6X4BiI
 
